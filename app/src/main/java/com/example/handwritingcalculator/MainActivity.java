@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         multiplyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                resultBox.append(" x ");
+                resultBox.append(" * ");
             }
         });
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
         divideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                resultBox.append(" ÷ ");
+                resultBox.append(" / ");
             }
         });
 
@@ -121,22 +121,22 @@ public class MainActivity extends AppCompatActivity {
         equalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View view) {
-                int answer = 0;
+                double answer = 0;
                 String expression = resultBox.getText().toString();
                 String[] newExpression = expression.split(" ");
 
                 switch(newExpression[1]){
                     case "+":
-                        answer = Integer.parseInt(newExpression[0]) + Integer.parseInt(newExpression[2]);
+                        answer = Double.parseDouble(newExpression[0]) + Double.parseDouble(newExpression[2]);
                         break;
                     case "-":
-                        answer = Integer.parseInt(newExpression[0]) - Integer.parseInt(newExpression[2]);
+                        answer = Double.parseDouble(newExpression[0]) - Double.parseDouble(newExpression[2]);
                         break;
                     case "*":
-                        answer = Integer.parseInt(newExpression[0]) * Integer.parseInt(newExpression[2]);
+                        answer = Double.parseDouble(newExpression[0]) * Double.parseDouble(newExpression[2]);
                         break;
                     case "/":
-                        answer = Integer.parseInt(newExpression[0]) / Integer.parseInt(newExpression[2]);
+                        answer = Double.parseDouble(newExpression[0]) / Double.parseDouble(newExpression[2]);
                         break;
                 }
                 resultBox.append(" = " + answer);
